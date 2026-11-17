@@ -100,5 +100,4 @@ These are missing on purpose. They are listed in `content.json` under `todos` an
 
 - **Photo.** No portrait was on the resume. Set `person.photo` when you have one.
 - **Project links.** The resume does not include repository or write-up URLs for the Druva or Momentum work. Add `projects[].links` when a URL exists.
-- **TraceIQ.** Featured work named TraceIQ LLM debuggability is not on the resume, so it is not on the site. Add a `projects` entry from real facts before publishing it. The build fails if that name appears in the page early.
 - **Phone number.** The mobile number is on the resume and is left out of the site and out of the downloadable PDF. Do not add it.

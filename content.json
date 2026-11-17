@@ -163,6 +163,16 @@
       "links": []
     },
     {
+      "id": "traceiq",
+      "title": "TraceIQ",
+      "context": "Druva, Software Engineer II",
+      "metric": "65%",
+      "metricLabel": "mean debug time cut",
+      "summary": "Built an LLM-powered code analysis service (AWS Bedrock, MCP, RAG, semantic caching) for automated RCA, cutting mean debug time by 65%.",
+      "facts": ["AI debuggability", "AWS Bedrock", "MCP", "RAG", "Semantic caching", "Automated RCA"],
+      "links": []
+    },
+    {
       "id": "one-click-cloud-setup",
       "title": "One-click cloud setup",
       "context": "Druva, Software Engineer",
@@ -230,10 +240,6 @@
     {
       "field": "projects[].links",
       "note": "TODO: The resume has no repository or write-up URLs for the Druva or Momentum work. Add {\"label\": \"...\", \"url\": \"https://...\"} on a project when a real link exists. Empty link lists are not shown."
-    },
-    {
-      "field": "projects (TraceIQ)",
-      "note": "TODO: TraceIQ LLM debuggability was requested as featured work but does not appear on the resume. Add a projects entry from real facts (summary, metric, dates, link) before it can be published. The build rejects the name on the public page until then."
     },
     {
       "field": "phone",

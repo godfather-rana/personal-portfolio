@@ -19,8 +19,6 @@ BANNED_IN_HTML = (
     "\u2014",  # em dash
     "\u2013",  # en dash
     "TODO",
-    "TraceIQ",
-    "traceiq",
     "lorem ipsum",
 )
 PHONE_DIGITS = re.compile(r"\d{10}")
@@ -33,6 +31,8 @@ REQUIRED_IN_HTML = (
     "On-Demand Meta Hydration Pipeline",
     "High-volume Microsoft Graph downloader",
     "Graph API migration",
+    "TraceIQ",
+    "65%",
     "One-click cloud setup",
     "$64K",
     "525+",
