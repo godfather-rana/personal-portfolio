@@ -1,0 +1,243 @@
+{
+  "_note": "Single source of copy for the site. Edit this file, then run python3 build.py. Keys under todos are not rendered. Do not add a phone number.",
+  "site": {
+    "title": "Ameet Kumar Rana | Go Backend Engineer",
+    "description": "Ameet Kumar Rana is a Go backend and distributed systems engineer at Druva, Pune. Open to backend and applied AI roles.",
+    "keywords": "Ameet Kumar Rana, Go, Golang, distributed systems, backend engineer, Druva, Microsoft Graph, AWS",
+    "url": "https://godfather-rana.github.io/",
+    "locale": "en_US",
+    "language": "en",
+    "themeColorLight": "#f4f1ea",
+    "themeColorDark": "#12110f",
+    "ogImage": "assets/og.png",
+    "ogImageAlt": "Ameet Kumar Rana, Go backend and distributed systems engineer at Druva"
+  },
+  "person": {
+    "name": "Ameet Kumar Rana",
+    "initials": "AR",
+    "jobTitle": "Software Engineer II",
+    "employer": "Druva",
+    "location": "Pune, India",
+    "positioning": "Go backend and distributed systems engineer",
+    "status": "Open to backend and applied AI roles",
+    "eyebrow": "Software Engineer II at Druva, Pune",
+    "summary": "5+ years building production integrations: multi-region workers, throttling-aware third-party APIs, and metrics-driven troubleshooting.",
+    "email": "mail2ameetrana@gmail.com",
+    "github": "https://github.com/godfather-rana",
+    "githubHandle": "godfather-rana",
+    "linkedin": "https://www.linkedin.com/in/ameet-kumar-rana-294b77161/",
+    "resumePath": "assets/Ameet-Kumar-Rana-Resume.pdf",
+    "photo": null,
+    "photoAlt": "Portrait of Ameet Kumar Rana"
+  },
+  "actions": [
+    {
+      "label": "Download resume",
+      "ariaLabel": "Download resume PDF",
+      "href": "assets/Ameet-Kumar-Rana-Resume.pdf",
+      "kind": "primary",
+      "download": "Ameet-Kumar-Rana-Resume.pdf"
+    },
+    {
+      "label": "Email",
+      "ariaLabel": "Email mail2ameetrana@gmail.com",
+      "href": "mailto:mail2ameetrana@gmail.com",
+      "kind": "ghost"
+    },
+    {
+      "label": "GitHub",
+      "ariaLabel": "GitHub profile, godfather-rana",
+      "href": "https://github.com/godfather-rana",
+      "kind": "ghost",
+      "rel": "me"
+    },
+    {
+      "label": "LinkedIn",
+      "ariaLabel": "LinkedIn profile",
+      "href": "https://www.linkedin.com/in/ameet-kumar-rana-294b77161/",
+      "kind": "ghost",
+      "rel": "me"
+    }
+  ],
+  "nav": [
+    {"href": "#about", "label": "About"},
+    {"href": "#experience", "label": "Experience"},
+    {"href": "#work", "label": "Work"},
+    {"href": "#skills", "label": "Skills"},
+    {"href": "#education", "label": "Education"},
+    {"href": "#contact", "label": "Contact"}
+  ],
+  "highlights": [
+    {"value": "$64K", "label": "cloud infrastructure saved per month"},
+    {"value": "9", "label": "regions, 525+ nodes"},
+    {"value": "2,000+", "label": "customers moved to Graph API"},
+    {"value": "6M+", "label": "Microsoft Graph download jobs"}
+  ],
+  "about": {
+    "paragraphs": [
+      "Golang backend engineer with 5+ years at Druva in Pune, from August 2021 to present. The work is production-grade, fault-tolerant integrations and distributed services: concurrent workers (goroutines and channels), throttling-aware integration with third-party APIs, multi-region execution, and metrics-driven troubleshooting.",
+      "From September 2024 to February 2025 I also worked part-time, concurrent with Druva, as an Applied ML / LLM Engineer at Momentum Robotics in Pune. I fine-tuned LLMs for warehouse and FMCG robotic operations and integrated models with telemetry, sensor feeds, and inventory APIs via MCP, including query rephrasing and reranking for real-time task prioritization.",
+      "I am looking for backend and applied AI engineer roles at product companies and Big Tech."
+    ]
+  },
+  "snapshot": [
+    {"label": "Role", "value": "Software Engineer II"},
+    {"label": "Employer", "value": "Druva, Pune"},
+    {"label": "Since", "value": "August 2021"},
+    {"label": "Also", "value": "Momentum Robotics, part-time"},
+    {"label": "Degree", "value": "B.E. Computer Science, CGPA 8.35"}
+  ],
+  "experience": [
+    {
+      "company": "Druva",
+      "location": "Pune, India",
+      "note": "August 2021 to present",
+      "roles": [
+        {
+          "title": "Software Engineer II",
+          "dates": "August 2023 to present",
+          "bullets": [
+            "Designed and implemented an on-demand metadata hydration pipeline for cloud application backups across 9 regions and 525+ nodes. Metadata preparation moved off the backup critical path, removing wasted work on backups with no changed data and cutting API throttling. An ingestion layer, a Thanos-based control and orchestration plane, and regional workers process millions of backup tasks, saving about $64K per month in cloud infrastructure cost and shortening backup windows.",
+            "Contributed to redesigning the control plane from a monolithic architecture to microservices. With a team of two junior engineers, implemented the Backupset microservice, and worked on a multi-region control plane deployment.",
+            "Developed reusable libraries for configuration, feature flags, and service integrations, used by peer engineering teams.",
+            "Designed and built a scalable, multi-instance downloader service from scratch (low-level design on AWS). It ingests 6M+ job requests, fans out billions of calls to Microsoft Graph to fetch customer data, and hands processed data to change generation and first-level dedupe. Owned SLAs and throttling for resilient high-volume API integration.",
+            "Designed high-fidelity change-detection libraries for Druva's next-generation SaaS storage system.",
+            "Improved core storage throughput and stability for Exchange Online, Gmail, SharePoint, and OneDrive by optimizing caching, database connections, multi-threading, and locking."
+          ]
+        },
+        {
+          "title": "Software Engineer",
+          "dates": "August 2021 to July 2023",
+          "bullets": [
+            "Owned and implemented Microsoft Graph API adoption for Exchange Online, migrating 2,000+ customers (about 2 million devices) from Outlook REST and EWS APIs to Graph API. Backup success rate reached 99% and restore success rate reached 95%. Proactively evaluated APIs and third-party libraries to address data-loss risks before customer impact.",
+            "Owned the Exchange Online data path end to end as the primary point of contact for escalations, resolved high-priority customer issues, and built features that improved customer retention and POC success. Mentored 2 junior engineers to take over ownership.",
+            "Built a framework that automates provisioning of 58+ Dockerized services, with startup validation and inter-service dependency handling. Adopted organization-wide."
+          ]
+        }
+      ]
+    },
+    {
+      "company": "Momentum Robotics",
+      "location": "Pune, India",
+      "note": "Part-time, concurrent with Druva",
+      "roles": [
+        {
+          "title": "Applied ML / LLM Engineer",
+          "dates": "September 2024 to February 2025",
+          "bullets": [
+            "Fine-tuned LLMs for warehouse and FMCG robotic operations and integrated models with telemetry, sensor feeds, and inventory APIs via MCP, including query rephrasing and reranking for real-time task prioritization."
+          ]
+        }
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "id": "hydration",
+      "title": "On-Demand Meta Hydration Pipeline",
+      "context": "Druva, Software Engineer II",
+      "metric": "$64K",
+      "metricLabel": "cloud infrastructure saved per month",
+      "summary": "On-demand metadata hydration for cloud application backups. Preparation moved off the backup critical path, so unchanged backups skip wasted work and extra API throttling. Ingestion, a Thanos control plane, and regional workers process millions of tasks and shorten backup windows.",
+      "facts": ["9 regions", "525+ nodes", "Millions of backup tasks", "Thanos control plane"],
+      "links": []
+    },
+    {
+      "id": "graph-downloader",
+      "title": "High-volume Microsoft Graph downloader",
+      "context": "Druva, Software Engineer II",
+      "metric": "6M+",
+      "metricLabel": "job requests ingested",
+      "summary": "Multi-instance downloader designed from scratch on AWS. It fans out billions of Microsoft Graph calls, then hands processed customer data to change generation and first-level dedupe. Owned the SLAs and the throttling that keep the integration resilient.",
+      "facts": ["Billions of Graph calls", "Multi-instance", "SLA ownership", "AWS"],
+      "links": []
+    },
+    {
+      "id": "graph-migration",
+      "title": "Graph API migration",
+      "context": "Druva, Software Engineer",
+      "metric": "2,000+",
+      "metricLabel": "customers migrated to Graph API",
+      "summary": "Owned Microsoft Graph adoption for Exchange Online, moving customers off Outlook REST and EWS. About 2 million devices. Backup success rate reached 99% and restore success rate reached 95%.",
+      "facts": ["About 2 million devices", "99% backup success", "95% restore success", "Exchange Online"],
+      "links": []
+    },
+    {
+      "id": "one-click-cloud-setup",
+      "title": "One-click cloud setup",
+      "context": "Druva, Software Engineer",
+      "metric": "58+",
+      "metricLabel": "Dockerized services provisioned",
+      "summary": "A framework for one-click provisioning, with startup validation and inter-service dependency handling. Adopted organization-wide.",
+      "facts": ["Startup validation", "Dependency handling", "Org-wide adoption"],
+      "links": []
+    }
+  ],
+  "skills": [
+    {
+      "level": "Proficient",
+      "items": [
+        "Golang (concurrency, goroutines, channels)",
+        "Distributed systems",
+        "Fault tolerance",
+        "REST API integrations",
+        "Microservices",
+        "AWS",
+        "Docker",
+        "Git",
+        "Python",
+        "C++",
+        "SQL"
+      ]
+    },
+    {
+      "level": "Familiar",
+      "items": [
+        "gRPC",
+        "SQS/SNS",
+        "Thanos (metrics)",
+        "MySQL",
+        "Azure",
+        "AWS Bedrock",
+        "RAG"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "school": "Army Institute of Technology",
+      "location": "Pune, Maharashtra",
+      "credential": "Bachelor of Engineering in Computer Science",
+      "detail": "CGPA 8.35",
+      "dates": "July 2017 to May 2021"
+    }
+  ],
+  "certifications": [
+    {
+      "name": "HackerRank Problem Solving (Advanced)",
+      "issuer": "HackerRank"
+    }
+  ],
+  "contact": {
+    "text": "Email is the best way to reach me about backend or applied AI roles."
+  },
+  "footer": "Ameet Kumar Rana, Pune, India",
+  "todos": [
+    {
+      "field": "person.photo",
+      "note": "TODO: No photo is on the resume. Set person.photo to a path under assets/ (for example assets/portrait.jpg). person.photoAlt is already set. Until then the header shows initials, not a photograph."
+    },
+    {
+      "field": "projects[].links",
+      "note": "TODO: The resume has no repository or write-up URLs for the Druva or Momentum work. Add {\"label\": \"...\", \"url\": \"https://...\"} on a project when a real link exists. Empty link lists are not shown."
+    },
+    {
+      "field": "projects (TraceIQ)",
+      "note": "TODO: TraceIQ LLM debuggability was requested as featured work but does not appear on the resume. Add a projects entry from real facts (summary, metric, dates, link) before it can be published. The build rejects the name on the public page until then."
+    },
+    {
+      "field": "phone",
+      "note": "TODO: none. The mobile number on the resume is intentionally unpublished, including in assets/Ameet-Kumar-Rana-Resume.pdf. Do not add it to this file."
+    }
+  ]
+}
