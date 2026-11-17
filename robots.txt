@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://godfather-rana.github.io/personal-portfolio/sitemap.xml
