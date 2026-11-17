@@ -70,17 +70,16 @@ The downloadable file is `assets/Ameet-Kumar-Rana-Resume.pdf`. The mobile number
 
 ## Deploy to GitHub Pages
 
-The live site is meant to be the user site at `https://godfather-rana.github.io/`. That URL works when the GitHub repository is named exactly `godfather-rana.github.io`.
+The repository is [godfather-rana/personal-portfolio](https://github.com/godfather-rana/personal-portfolio). GitHub Pages serves a project site from a subpath, not the user-site root:
 
-1. Create a repository with that name under the `godfather-rana` account (or push this project there).
-2. Push the `main` branch.
-3. In the repository, open Settings, then Pages. Under Build and deployment, set Source to GitHub Actions.
-4. The workflow in `.github/workflows/pages.yml` runs `python3 build.py` and deploys the `dist/` folder.
-5. After the first green run, the site is at `https://godfather-rana.github.io/`.
+`https://godfather-rana.github.io/personal-portfolio/`
 
-The canonical URL is `site.url` in `content.json`. Change it if the site is served somewhere else, then rebuild so Open Graph and the sitemap match.
+1. Push the `main` branch to that repository.
+2. In the repository, open Settings, then Pages. Under Build and deployment, set Source to GitHub Actions.
+3. The workflow in `.github/workflows/pages.yml` runs `python3 build.py` and deploys the `dist/` folder.
+4. After the first green run, the site is at `https://godfather-rana.github.io/personal-portfolio/`.
 
-Relative links are used throughout, so the same `dist/` folder also works if Pages serves the site from a project subpath.
+`site.url` in `content.json` is that address. The build writes it into the canonical link, Open Graph tags, JSON-LD, and `sitemap.xml`. Stylesheets, scripts, fonts, the resume, and images use relative paths (`styles.css`, `assets/...`), so they load under `/personal-portfolio/` and also when you open `dist/` on its own for a local preview. Do not switch those to root paths such as `/styles.css`. Those would skip the project folder and 404 on GitHub Pages.
 
 ## Layout
 

@@ -265,7 +265,7 @@ def json_ld(data: dict) -> str:
         "jobTitle": person["jobTitle"],
         "worksFor": {"@type": "Organization", "name": person["employer"]},
         "email": f"mailto:{person['email']}",
-        "url": data["site"]["url"],
+        "url": canonical_url(data),
         "address": {
             "@type": "PostalAddress",
             "addressLocality": "Pune",
@@ -300,7 +300,7 @@ def render(data: dict) -> str:
     email = person["email"]
     description = site["description"]
     title = site["title"]
-    url = site["url"].rstrip("/") + "/"
+    url = canonical_url(data)
     og = site["ogImage"]
     return f"""<!DOCTYPE html>
 <html lang="{esc(site["language"])}">
@@ -440,17 +440,21 @@ def render(data: dict) -> str:
 """
 
 
+def canonical_url(data: dict) -> str:
+    return data["site"]["url"].rstrip("/") + "/"
+
+
 def write_robots(data: dict) -> None:
-    url = data["site"]["url"].rstrip("/")
+    url = canonical_url(data)
     (DIST / "robots.txt").write_text(
-        "User-agent: *\nAllow: /\n\nSitemap: " + url + "/sitemap.xml\n",
+        "User-agent: *\nAllow: /\n\nSitemap: " + url + "sitemap.xml\n",
         encoding="utf-8",
     )
     (DIST / "sitemap.xml").write_text(
         '<?xml version="1.0" encoding="UTF-8"?>\n'
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
         "  <url>\n"
-        f"    <loc>{esc(url)}/</loc>\n"
+        f"    <loc>{esc(url)}</loc>\n"
         "  </url>\n"
         "</urlset>\n",
         encoding="utf-8",
@@ -514,8 +518,9 @@ def generate_images(data: dict) -> None:
         if line2:
             draw.text((x, 490), " ".join(line2), font=font(sans_reg, 20), fill="#c1b9ad")
         x += 340
-    host = urlparse(data["site"]["url"]).netloc
-    draw.text((80, 568), host, font=font(sans, 20), fill="#8a8378")
+    parsed = urlparse(data["site"]["url"])
+    public_path = (parsed.netloc + parsed.path).rstrip("/")
+    draw.text((80, 568), public_path, font=font(sans, 20), fill="#8a8378")
     og_path = ROOT / "assets" / "og.png"
     image.save(og_path, "PNG", optimize=True)
 
@@ -543,6 +548,16 @@ def validate(data: dict, page: str) -> None:
     lowered = page.lower()
     if "phone" in lowered and "telephone=no" not in lowered:
         errors.append("unexpected phone mention in HTML")
+    canonical = canonical_url(data)
+    if f'rel="canonical" href="{esc(canonical)}"' not in page:
+        errors.append(f"canonical URL is not {canonical}")
+    if f'property="og:url" content="{esc(canonical)}"' not in page:
+        errors.append(f"og:url is not {canonical}")
+    if f'property="og:image" content="{esc(canonical + data["site"]["ogImage"])}"' not in page:
+        errors.append("og:image is not under the project pages URL")
+    for token in ('href="/', 'src="/'):
+        if token in page:
+            errors.append(f"root-absolute path {token} found; project pages need relative asset paths")
     if errors:
         sys.exit("Build blocked:\n- " + "\n- ".join(errors))
     pdf = DIST / "assets" / "Ameet-Kumar-Rana-Resume.pdf"
