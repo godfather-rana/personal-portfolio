@@ -27,7 +27,7 @@
     "githubHandle": "godfather-rana",
     "linkedin": "https://www.linkedin.com/in/ameet-kumar-rana-294b77161/",
     "resumePath": "assets/Ameet-Kumar-Rana-Resume.pdf",
-    "photo": null,
+    "photo": "assets/portrait.png",
     "photoAlt": "Portrait of Ameet Kumar Rana"
   },
   "actions": [
@@ -235,7 +235,7 @@
   "todos": [
     {
       "field": "person.photo",
-      "note": "TODO: No photo is on the resume. Set person.photo to a path under assets/ (for example assets/portrait.jpg). person.photoAlt is already set. Until then the header shows initials, not a photograph."
+      "note": "TODO: No photo is on the resume. Set person.photo to a path under assets/ (for example assets/portrait.png). person.photoAlt is already set. Until then the header shows initials, not a photograph."
     },
     {
       "field": "projects[].links",
